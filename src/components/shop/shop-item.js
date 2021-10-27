@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function(props) {
+        // -Image
+        // -Description
+        // -ID
+
+  const { id, description, image } = props.item;
+
   return (
     <div>
-      <h3>{props.title}</h3>
-      <h3>{props.url}</h3>
+      <img src={image} />
+      <div>{description}</div>
+      <Link to ={`/shop/${id}`}>Link</Link>
     </div>
   );
 }

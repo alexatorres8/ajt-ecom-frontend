@@ -1,0 +1,26 @@
+.page-layout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0px 150px;
+  background-color: #fff;
+  height: calc(100vh - 50px);
+  color: $slate-gray;
+
+  .left-column {
+    opacity: 85%;
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+
+    .title-header {
+      align-items: left;
+      font-size: 30px;
+    }
+
+  }
+}
+
+

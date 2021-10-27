@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import ShopItem from "./shop-item";
 
@@ -10,14 +11,14 @@ export default class ShopContainer extends Component {
             pageTitle: "Shop",
             isLoading: false,
             data: [
-                { title: "Stickers", category: "Stationery" },
-                { title: "T-shirts", category: "Apparel" },
-                { title: "Postcards", category: "Stationery" },
-                { title: "Prints", category: "Artwork"}
+                // { title: "Stickers", category: "Stationery", slug: "stickers" },
+                // { title: "T-shirts", category: "Apparel", slug: "tshirts" },
+                // { title: "Postcards", category: "Stationery", slug: "postcards" }
             ]
         };
 
         this.handleFilter = this.handleFilter.bind(this);
+        // this.getShopItems = this.getShopItems.bind(this);
     }
 
     handleFilter(filter) {
@@ -28,11 +29,30 @@ export default class ShopContainer extends Component {
         })
     }
 
+    // getShopItems() {
+    //     axios.get('/user?ID=12345')
+    //     .then(response = > {
+    //     .then(response => {
+    //         this.setState({
+    //           data: response.data.shop_items
+    //         });
+    //       })
+    //       .catch(error => {
+    //         console.log(error);
+    //       });
+    //   }
+
     shopItem() {
         return this.state.data.map(item => {
-            return <ShopItem title={item.title} url={"google.com"} />;
+            return <ShopItem key={item.id} item={item}
+            // title={item.title} url={"google.com"} slug={item.id}
+            />;
         })
     }
+
+    // componentDidMount() {
+    //     this.getShopItems();
+    // }
 
     render() {
         if (this.state.isLoading) {
@@ -41,10 +61,9 @@ export default class ShopContainer extends Component {
 
         return (
             <div>
-                <h3>{this.state.pageTitle}</h3>
+                {/* <h3>{this.state.pageTitle}</h3> */}
 
-                <button onClick={() => this.handleFilter('Apparel')}>Apparel</button>
-                <button onClick={() => this.handleFilter('Artwork')}>Artwork</button>
+                <button onClick={() => this.handleFilter('Prints')}>Prints</button>
                 <button onClick={() => this.handleFilter('Stationery')}>Stationery</button>
                 
                 {this.shopItem()}
