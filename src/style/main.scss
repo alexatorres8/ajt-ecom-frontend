@@ -1,4 +1,7 @@
 @import "./variables.scss";
 @import "./base.scss";
-@import "./navigation/navigation.scss";
-@import "./page-layout.scss"
+@import "./navigation.scss";
+@import "./page-layout.scss";
+@import "./shop.scss";
+@import "/shop-product.scss";
+@import "/auth-page-layout";

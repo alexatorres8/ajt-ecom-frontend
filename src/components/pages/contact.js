@@ -1,6 +1,6 @@
 import React from 'react';
 
-import contactPicture from "../../../static/assets/images/jasmine03.png";
+import contactPicture from "../../../static/assets/images/jasmine04.png";
 
 export default function() {
     return (
@@ -18,8 +18,7 @@ export default function() {
                 <div className="title-header">Contact Me</div>
 
                 <div className="page-text">
-                    <p>Hey! Jasmine here. I'm a 2nd year student at a technical college in Columbia, SC.
-                    I'm working towards an Associate's Degree in Graphic Design.</p>
+                    <p></p>
 
                     <p>some-email@gmail.com</p>
                 </div>

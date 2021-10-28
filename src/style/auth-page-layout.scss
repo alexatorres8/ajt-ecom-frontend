@@ -1,0 +1,19 @@
+.auth-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0px 150px;
+    background-color: #fff;
+    height: calc(100vh - 50px);
+    color: $slate-gray;
+
+    .page-content {
+        display: flex;
+        .form {
+            display: flex;
+        }
+    }
+
+    .auth-form-wrapper {
+
+    }
+}

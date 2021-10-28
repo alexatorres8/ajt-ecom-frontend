@@ -1,58 +1,52 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import ShopItem from "./shop-item";
+import ShopProduct from "./shop-product";
+import ItemOne from "../../../static/assets/images/sticker1.png";
+import ItemTwo from "../../../static/assets/images/sticker2.png";
+import ItemThree from "../../../static/assets/images/sticker3.png";
+import ItemFour from "../../../static/assets/images/sticker4.png";
 
 export default class ShopContainer extends Component {
     constructor() {
         super();
 
         this.state = {
-            pageTitle: "Shop",
+            pageTitle: "Welcome to the shop",
             isLoading: false,
             data: [
-                // { title: "Stickers", category: "Stationery", slug: "stickers" },
-                // { title: "T-shirts", category: "Apparel", slug: "tshirts" },
-                // { title: "Postcards", category: "Stationery", slug: "postcards" }
+                { title: "Stickers", category: "Stationery", slug: "stickers" },
+                { title: "T-shirts", category: "Apparel", slug: "tshirts" },
+                { title: "Postcards", category: "Stationery", slug: "postcards" }
             ]
         };
 
-        this.handleFilter = this.handleFilter.bind(this);
-        // this.getShopItems = this.getShopItems.bind(this);
+        this.getShopItems = this.getShopItems.bind(this);
     }
 
-    handleFilter(filter) {
-        this.setState({
-            data: this.state.data.filter(item => {
-                return item.category === filter;
-            })
-        })
-    }
-
-    // getShopItems() {
-    //     axios.get('/user?ID=12345')
-    //     .then(response = > {
-    //     .then(response => {
-    //         this.setState({
-    //           data: response.data.shop_items
-    //         });
-    //       })
-    //       .catch(error => {
-    //         console.log(error);
-    //       });
-    //   }
+    getShopItems() {
+        axios.get('/user?ID=12345')
+        .then(response => {
+            this.setState({
+              data: response.data.shop_items
+            });
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
 
     shopItem() {
         return this.state.data.map(item => {
-            return <ShopItem key={item.id} item={item}
-            // title={item.title} url={"google.com"} slug={item.id}
-            />;
-        })
+            return <ShopProduct key={item.id} item={item}
+            title={item.title} url={"google.com"} slug={item.id}
+            />
+        });
     }
 
-    // componentDidMount() {
-    //     this.getShopItems();
-    // }
+    componentDidMount() {
+        this.getShopItems();
+    }
 
     render() {
         if (this.state.isLoading) {
@@ -60,12 +54,34 @@ export default class ShopContainer extends Component {
         }
 
         return (
-            <div>
-                {/* <h3>{this.state.pageTitle}</h3> */}
+            <div className="shop-layout-wrapper">
 
-                <button onClick={() => this.handleFilter('Prints')}>Prints</button>
-                <button onClick={() => this.handleFilter('Stationery')}>Stationery</button>
-                
+                <div className="shop-container">       
+                        <div className="shop-item">
+                            <img src={ItemOne} />
+                        </div>
+
+                        <div className="shop-item">
+                            <img src={ItemTwo} />
+                        </div>
+
+                        <div className="shop-item">
+                            <img src={ItemThree} />
+                        </div>
+
+                        <div className="shop-item">
+                            <img src={ItemFour} />
+                        </div>
+
+                        <div className="shop-item">
+                            <img src="img_snow.jpg" />
+                        </div>
+
+                        <div className="shop-item">
+                            <img src="img_snow.jpg" />
+                        </div>
+                </div>
+
                 {this.shopItem()}
             </div>
         )
