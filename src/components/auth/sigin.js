@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class Login extends Component {
+export default class Signin extends Component {
   constructor(props) {
     super(props);
 
@@ -23,7 +23,7 @@ export default class Login extends Component {
   }
 
   handleSubmit(event) {
-    axios.post("api url sessions",
+    axios.post("https://api-ecom-ajt.herokuapp.com/user",
     {
         user: {
             email: this.state.email,
