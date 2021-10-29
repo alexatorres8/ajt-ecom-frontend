@@ -1,19 +1,26 @@
 .shop-product {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    // grid-template-columns: 2fr;
     justify-items: center;
     align-items: center;
     grid-row-gap: 5px;
     margin: 10px;
     padding: 10px;
-    height: 250px;
+    height: 300px;
     width: 200px;
     box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);
-    background-color: #fff;
+    opacity: 60%;
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &:active {
+        opacity: 100%;
+    }
 
     .title {
-        color: $olive-green;
+        color: $slate-gray;
         font-size: 17px;
         font-weight: 600;
         text-transform: uppercase;
@@ -23,14 +30,15 @@
 
     .graphic {
         img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
         }
     }
 
     .description {
         font-size: 14px;
         text-align: center;
+        margin: 10px;
     }
 
     .price {
@@ -42,16 +50,19 @@
         justify-items: center;
         align-items: center;
         height: 40px;
-        width: 85px;
+        width: 88px;
         border-radius: 15px;
         color: $slate-gray;
         background-color: $olive-green;
         font-size: 14px;
         font-weight: 600;
+        letter-spacing: 0.3px;
         transition: all .3s ease;
 
         &:hover {
             transform: scale(0.99);
+            color: $lite-green;
+            background-color: $slate-gray;
         }
 
         &:active {

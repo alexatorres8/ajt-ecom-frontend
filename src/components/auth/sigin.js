@@ -33,18 +33,18 @@ export default class Login extends Component {
     { withCredentials: true}
     ).then(response => {
         if (response.data.status === "created") {
-            this.props.handleSucessfulAuth();
+            this.props.handleSuccessfulAuth();
         } else {
             this.setSate({
             errorText: "The email or password is incorrect"
           });
-          this.props.handleUnsucessfulAuth();
+          this.props.handleUnsuccessfulAuth();
         }
     }).catch(error => {
         this.setState({
             errorText: "You are not authorized to purchase items"
         });
-        this.props.handleUnsucessfulAuth();
+        this.props.handleUnsuccessfulAuth();
     });
     event.preventDefault();
   }
@@ -57,7 +57,7 @@ export default class Login extends Component {
                 {this.state.errorText}
             </div>
 
-        <form onSubmit={this.handleSubmit} className="auth-form-wrapper">
+        <form onSubmit={this.handleSubmit} className="form-wrapper">
 
           <div className="form-group">
             <input
@@ -79,8 +79,7 @@ export default class Login extends Component {
             />
           </div>
 
-
-          <button type="submit">Login</button>
+          <button type="submit">Sign In</button>
         </form>
 
       </div>

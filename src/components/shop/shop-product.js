@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class ShopProduct extends Component {
   render() {
+
+    // const linkStyle = {
+    //   textDecoration: "none",
+    //   color: "#3E4749",
+    // };
+
     const {_id, title, graphic, description, price} = this.props;
 
     return (
@@ -14,9 +21,9 @@ class ShopProduct extends Component {
           <img src={graphic} />
         </div>
 
-        {/* <div className="description">
+        <div className="description">
             {description}
-        </div> */}
+        </div>
 
         <div className="price">
             ${price}

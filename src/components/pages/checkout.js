@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import image2 from "../../../static/assets/images/image2.jpg";
 
-export default class Account extends Component {
+export default class Checkout extends Component {
     render() {
 
         const linkStyle = {
@@ -13,10 +13,9 @@ export default class Account extends Component {
 
         return (
             <div className="user-layout-wrapper">
-
                 <div className="left-column">
-                    <div className="title-header">Account Information</div>
-
+                    <div className="title-header">Checkout</div>
+                    
                     <form onSubmit={this.handleSubmit} className="form-wrapper">
                         
                         <div className="form-group">
@@ -40,19 +39,53 @@ export default class Account extends Component {
                         </div>
 
                         <div className="form-group">
-                            Password:
+                            Card Number:
                             <input
-                                type="password"
-                                name="password"
-                                placeholder="Your password"
+                                type="text"
+                                name="card"
+                                placeholder="0000 0000 0000"
+                                // value={this.state.address}
+                                // onChange={this.handleChange}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            Expiration Date:
+                            <input
+                                type="text"
+                                name="expriation"
+                                placeholder="MM/YY"
+                                // value={this.state.address}
+                                // onChange={this.handleChange}
+                            />
+                        </div>
+                        
+                        <div className="form-group">
+                            CVV:
+                            <input
+                                type="number"
+                                name="cvv"
+                                placeholder="123"
                                 // value={this.state.address}
                                 // onChange={this.handleChange}
                             />
                         </div>
 
                         <div className="button">
-                            <Link to="/account" style={linkStyle}>
-                                Update Account
+                            <Link
+                                to="/order-complete"
+                                style={linkStyle}
+                            >
+                                Submit Order
+                            </Link>
+                        </div>
+
+                        <div className="button">
+                            <Link
+                                to="/cart"
+                                style={linkStyle}
+                            >
+                                Back to Cart
                             </Link>
                         </div>
                     </form>

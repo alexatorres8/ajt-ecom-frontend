@@ -3,20 +3,23 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faSignInAlt, faSignOutAlt, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faSignInAlt, faSignOutAlt, faLeaf, faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 
 import NavigationContainer from "./navigation/navigation-container";
 import Shop from "./pages/shop";
+import Faq from "./pages/faq";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import ShopDetail from "./shop/shop-detail";
 import Account from "./pages/account";
-import Cart from "./cart/cart";
+import Order from "./pages/order-history";
+import Cart from "./pages/cart";
+import Checkout from "./pages/checkout";
+import OrderComplete from "./pages/order-complete";
 import Auth from "./pages/auth";
 import NotFound from "./pages/not-found";
 
 
-library.add(faShoppingCart, faSignInAlt, faSignOutAlt, faLeaf);
+library.add(faShoppingCart, faSignInAlt, faSignOutAlt, faLeaf, faAngleDoubleLeft);
 
 class App extends Component {
   constructor(props) {
@@ -79,7 +82,9 @@ class App extends Component {
   authorizedPages() {
     return [
       <Route path="/account" component={Account} />,
-      <Route path="/payment" component={Payment} />
+      <Route path="/order-history" component={Order} />,
+      <Route path="/checkout" component={Checkout} />,
+      <Route path="/order-complete" component={OrderComplete} />
     ]
   }
 
@@ -109,14 +114,17 @@ class App extends Component {
                 )}
               />
 
+              <Route exact path="/faq" component={Faq} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
-              <Route exact path="/shop/:slug" component={ShopDetail} />
               {this.state.signedInStatus === "SIGNED_IN" ? this.authorizedPages() : null}
 
-              <Route path="/account" component={Account} />
-
               <Route path="/cart" component={Cart} />
+
+              <Route path="/account" component={Account} />
+              <Route path="/order-history" component={Order} />
+              <Route path="/checkout" component={Checkout} />
+              <Route path="/order-complete" component={OrderComplete} />
               {/* <Route path="/signout" component={SignOut} /> */}
               <Route component={NotFound} />
             </Switch>

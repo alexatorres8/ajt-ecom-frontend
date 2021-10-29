@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import notFoundPicture from "../../../static/assets/images/notfound.jpg";
+import image2 from "../../../static/assets/images/image2.jpg";
 
 export default function() {
     return (
@@ -9,7 +9,7 @@ export default function() {
             <div
                 className="left-column"
                 style={{
-                    background: "url(" + notFoundPicture + ") no-repeat",
+                    background: "url(" + image2 + ") no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}

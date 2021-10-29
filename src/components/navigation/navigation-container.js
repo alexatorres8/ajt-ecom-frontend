@@ -44,6 +44,12 @@ const NavigationContainer = (props) => {
                 </div>
 
                 <div className="left-nav-wrapper">
+                    <NavLink to="/faq" activeClassName="nav-link-active">
+                        FAQs
+                    </NavLink>
+                </div>
+
+                <div className="left-nav-wrapper">
                     <NavLink to="/about" activeClassName="nav-link-active">
                         About
                     </NavLink>
@@ -55,9 +61,11 @@ const NavigationContainer = (props) => {
                     </NavLink>
                 </div>
 
-                {dynamicLink("/account", "Account")}
+                {/* {dynamicLink("/account", "Account")}
+                {dynamicLink("/order-history", "Order History")} */}
 
-                {/* {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/account", "Account") : null} */}
+                {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/account", "Account") : null}
+                {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/order-history", "Order") : null}
             </div>
 
             <div className="right-side">
@@ -66,15 +74,15 @@ const NavigationContainer = (props) => {
                         <FontAwesomeIcon icon="shopping-cart" />
                     </NavLink>
                 </div>
-                
+
+               
                 <div className="right-nav-wrapper">
                     <NavLink to="/auth" activeClassName="nav-link-active">
                         <FontAwesomeIcon icon="sign-in-alt" />
                     </NavLink>
                 </div>
 
-                {props.signedInStatus === "SIGNED_IN" ? <a onClick={handleSignOut}>Sign Out</a> : null}
-                
+                {props.signedInStatus === "SIGNED_IN" ? <a onClick={handleSignOut}>Sign Out</a> : null}   
             </div>
         </div>
     )

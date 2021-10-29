@@ -1,6 +1,6 @@
 import React from 'react';
 
-import aboutPicture from "../../../static/assets/images/jasmine01.jpg";
+import aboutPicture from "../../../static/assets/images/jasmine03.png";
 
 export default function() {
     return (
@@ -18,10 +18,11 @@ export default function() {
                 <div className="title-header">About Me</div>
                  
                 <div className="page-text">
-                    <p>Hey! Jasmine here. I'm working towards an Associate's Degree in Commerical Graphics at a technical college in South Carolina.</p>
+                    <p><b>Name</b>: Jasmine</p>
 
-                    <p>My interests are listening to music, hanging out with my friends, and .</p>
+                    <p><b>Education</b>: Associate's Degree in Commercial Graphics (2022)</p>
 
+                    <p><b>Interests</b>: Listening to music, hanging out with friends</p>
                 </div>
             </div>
         </div>

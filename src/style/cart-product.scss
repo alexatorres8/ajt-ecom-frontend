@@ -1,0 +1,18 @@
+.cart-product {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    padding: 10px;
+
+    .user-order {
+
+        .remove {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+    }
+
+    .user-totals {
+
+    }
+}

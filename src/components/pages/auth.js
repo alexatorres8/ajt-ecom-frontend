@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import notFoundPicture from "../../../static/assets/images/notfound.jpg";
+import image1 from "../../../static/assets/images/image1.jpg";
 import SignIn from "../auth/sigin";
 
 export default class Auth extends Component {
@@ -26,7 +26,7 @@ export default class Auth extends Component {
             <div
                 className="left-column"
                 style={{
-                    background: "url(" + notFoundPicture + ") no-repeat",
+                    background: "url(" + image1 + ") no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}
