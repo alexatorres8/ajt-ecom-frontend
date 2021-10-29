@@ -71,7 +71,7 @@ class App extends Component {
         });
       }
     }).catch(error => {
-      console.log("Error", error);
+      console.log("The error is", error);
     });
   }
 

@@ -82,7 +82,7 @@ const NavigationContainer = (props) => {
                     </NavLink>
                 </div>
 
-                {props.signedInStatus === "SIGNED_IN" ? <a onClick={handleSignOut}>Sign Out</a> : null}   
+                {props.signedInStatus === "SIGNED_IN" ? <a onClick={handleSignOut}><FontAwesomeIcon icon="sign-out-alt" /></a> : null}   
             </div>
         </div>
     )
