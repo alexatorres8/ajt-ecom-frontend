@@ -121,10 +121,7 @@ class App extends Component {
 
               <Route path="/cart" component={Cart} />
 
-              <Route path="/account" component={Account} />
-              <Route path="/order-history" component={Order} />
-              <Route path="/checkout" component={Checkout} />
-              <Route path="/order-complete" component={OrderComplete} />
+
               {/* <Route path="/signout" component={SignOut} /> */}
               <Route component={NotFound} />
             </Switch>

@@ -25,27 +25,27 @@ export default class Signin extends Component {
   handleSubmit(event) {
     axios.post("https://api-ecom-ajt.herokuapp.com/user",
     {
-        user: {
-            email: this.state.email,
-            password: this.state.password
-        }
+      user: {
+        email: this.state.email,
+        password: this.state.password
+      }
     },
-    { withCredentials: true}
+    { withCredentials: true } 
     ).then(response => {
         if (response.data.status === "created") {
-            this.props.handleSuccessfulAuth();
+          this.props.handleSuccessfulAuth();
         } else {
-            this.setState({
+          this.setState({
             errorText: "The email or password is incorrect"
           });
           this.props.handleUnsuccessfulAuth();
         }
     }).catch(error => {
         this.setState({
-            errorText: "You are not authorized to purchase items"
+          errorText: "You are not authorized to purchase items"
         });
         this.props.handleUnsuccessfulAuth();
-    });
+      });
 
     event.preventDefault();
   }
