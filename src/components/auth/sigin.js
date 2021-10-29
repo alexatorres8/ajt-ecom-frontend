@@ -35,7 +35,7 @@ export default class Signin extends Component {
         if (response.data.status === "created") {
             this.props.handleSuccessfulAuth();
         } else {
-            this.setSate({
+            this.setState({
             errorText: "The email or password is incorrect"
           });
           this.props.handleUnsuccessfulAuth();
@@ -46,6 +46,7 @@ export default class Signin extends Component {
         });
         this.props.handleUnsuccessfulAuth();
     });
+
     event.preventDefault();
   }
 
@@ -81,7 +82,6 @@ export default class Signin extends Component {
 
           <button type="submit">Sign In</button>
         </form>
-
       </div>
     );
   }

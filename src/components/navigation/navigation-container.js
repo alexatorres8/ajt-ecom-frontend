@@ -61,9 +61,6 @@ const NavigationContainer = (props) => {
                     </NavLink>
                 </div>
 
-                {/* {dynamicLink("/account", "Account")}
-                {dynamicLink("/order-history", "Order History")} */}
-
                 {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/account", "Account") : null}
                 {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/order-history", "Order") : null}
             </div>

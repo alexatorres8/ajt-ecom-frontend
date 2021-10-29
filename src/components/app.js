@@ -53,7 +53,7 @@ class App extends Component {
   }
 
   checkSignInStatus() {
-    return axios.get("https://api-ecom-ajt.herokuapp.com/users", {
+    return axios.get("https://api-ecom-ajt.herokuapp.com/user", {
       withCredentials: true
     }).then(response => {
       const signedIn = response.data.signed_in;
