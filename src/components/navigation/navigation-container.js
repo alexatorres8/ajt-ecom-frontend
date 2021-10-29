@@ -17,7 +17,7 @@ const NavigationContainer = (props) => {
 
     const handleSignOut = () => {
         axios.delete("api url signout", {
-            withCredentials: true
+            withCredentials: false
         }).then(response => {
             if (response.status === 200) {
                 props.history.push("/");

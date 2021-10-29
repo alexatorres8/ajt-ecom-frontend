@@ -30,7 +30,7 @@ export default class Signin extends Component {
         password: this.state.password
       }
     },
-    { withCredentials: true } 
+    { withCredentials: false } 
     ).then(response => {
         if (response.data.status === "created") {
           this.props.handleSuccessfulAuth();
