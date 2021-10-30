@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import { connect } from "react-redux";
-import * as actions from "../../actions";
+import axios from "axios";
 
 import ShopProduct from "../shop/shop-product";
 
 class Shop extends Component {
-    componentDidMount() {
-        const navigationSignOutLink = [
-            {
-                title: "Sign Out",
-                path: "/signout"
-            }
-        ]
+    constructor() {
+       super();
+       
+       this.state = {
+           items: []
+       }
+    }
 
-        this.props.fetchShopProducts();
+    componentDidMount() {
+        axios.get("https://api-ecom-ajt.herokuapp.com/items")
+        .then(response => this.setState({
+            items: response.data
+        }))
     }
 
     render() {
@@ -29,28 +29,17 @@ class Shop extends Component {
                 <div className="product-wrapper">
                     <div className="shop-products">
                         {
-                            this.props.products.map(product => {
+                            this.state.items.map(item => {
                                 return (
-                                    <ShopProduct {...product} key={product._id} />
+                                    <ShopProduct {...item} key={item.id} />
                                 )
                             })
                         }
                     </div>
                 </div>
-                {/* shopping cart activated */}
-                {/* <ShopContainer /> */}
             </div>
         );
     }
 }
-
-function mapStateToProps(state) {
-    const { products } = state.shop;
-    return {
-        products
-    }
-}
-
-Shop = connect(mapStateToProps, actions)(Shop);
 
 export default Shop;

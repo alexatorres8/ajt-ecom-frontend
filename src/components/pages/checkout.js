@@ -24,8 +24,6 @@ export default class Checkout extends Component {
                                 type="text"
                                 name="name"
                                 placeholder="Your name"
-                                // value={this.state.name}
-                                // onChange={this.handleChange}
                             />
                         </div>
 
@@ -43,9 +41,7 @@ export default class Checkout extends Component {
                             <input
                                 type="text"
                                 name="card"
-                                placeholder="0000 0000 0000"
-                                // value={this.state.address}
-                                // onChange={this.handleChange}
+                                placeholder="0000 0000 0000 0000"
                             />
                         </div>
 
@@ -55,8 +51,6 @@ export default class Checkout extends Component {
                                 type="text"
                                 name="expriation"
                                 placeholder="MM/YY"
-                                // value={this.state.address}
-                                // onChange={this.handleChange}
                             />
                         </div>
                         
@@ -66,8 +60,6 @@ export default class Checkout extends Component {
                                 type="number"
                                 name="cvv"
                                 placeholder="123"
-                                // value={this.state.address}
-                                // onChange={this.handleChange}
                             />
                         </div>
 

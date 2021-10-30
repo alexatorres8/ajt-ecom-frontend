@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class ShopProduct extends Component {
   render() {
 
-    // const linkStyle = {
-    //   textDecoration: "none",
-    //   color: "#3E4749",
-    // };
-
-    const {_id, title, graphic, description, price} = this.props;
+    const {id, title, image, description, price} = this.props;
 
     return (
       <div className="shop-product">
@@ -17,8 +11,8 @@ class ShopProduct extends Component {
             {title}
         </div>
 
-        <div className="graphic">
-          <img src={graphic} />
+        <div className="image">
+          <img src={image} />
         </div>
 
         <div className="description">

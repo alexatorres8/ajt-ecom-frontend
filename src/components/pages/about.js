@@ -5,12 +5,11 @@ import aboutPicture from "../../../static/assets/images/jasmine03.png";
 export default function() {
     return (
         <div className="page-layout-wrapper">
-            <div
-                className="left-column"
-                style={{
+            <div className="left-column"
+                 style={{
                     background: "url(" + aboutPicture + ") no-repeat",
                     backgroundSize: "cover",
-                    backgroundPosition: "left"
+                    backgroundPosition: "right"
                 }}
             />
 

@@ -1,18 +1,11 @@
 .cart-product {
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
     padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 
-    .user-order {
-
-        .remove {
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-    }
-
-    .user-totals {
-
+    .total {
+        margin-top: 10px;
     }
 }

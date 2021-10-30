@@ -1,68 +1,45 @@
 import React from "react";
-import axios from "axios";
 import { withRouter } from "react-router";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavigationContainer = (props) => {
-    const dynamicLink = (route, linkText) => {
-        return (
-            <div className="left-nav-wrapper">
-                <NavLink to={route} activeClassName="nav-link-active">
-                    {linkText}
-                </NavLink>
-            </div>
-        )
-    }
-
-    const handleSignOut = () => {
-        axios.delete("api url signout", {
-            withCredentials: false
-        }).then(response => {
-            if (response.status === 200) {
-                props.history.push("/");
-                props.handleSuccessfulLogout();
-            }
-            return response.data;
-        }).catch(error => {
-            console.log("Error signing out", error);
-        });
-    }
-
+const NavigationContainer = () => {
     return(
         <div className="nav-wrapper">
+            
             <div className="left-side">
                 <div className="title-wrapper">
-                    Jasmine's Graphic Shop
-                    <FontAwesomeIcon icon="leaf" />
+                    <div className="title-text">
+                        Jasmine's Graphic Shop
+                        <FontAwesomeIcon icon="leaf" />
+                    </div>
                 </div>
 
                 <div className="left-nav-wrapper">
-                    <NavLink exact to="/" activeClassName="nav-link-active">
-                        Shop
-                    </NavLink>
-                </div>
+                    <div className="left-nav-link">
+                        <NavLink exact to="/" activeClassName="nav-link-active">
+                            Shop
+                        </NavLink>
+                    </div>
 
-                <div className="left-nav-wrapper">
-                    <NavLink to="/faq" activeClassName="nav-link-active">
-                        FAQs
-                    </NavLink>
-                </div>
+                    <div className="left-nav-link">
+                        <NavLink to="/faq" activeClassName="nav-link-active">
+                            FAQs
+                        </NavLink>
+                    </div>
 
-                <div className="left-nav-wrapper">
-                    <NavLink to="/about" activeClassName="nav-link-active">
-                        About
-                    </NavLink>
-                </div>
+                    <div className="left-nav-link">
+                        <NavLink to="/about" activeClassName="nav-link-active">
+                            About
+                        </NavLink>
+                    </div>
 
-                <div className="left-nav-wrapper">
-                    <NavLink to="/contact" activeClassName="nav-link-active">
-                        Contact
-                    </NavLink>
+                    <div className="left-nav-link">
+                        <NavLink to="/contact" activeClassName="nav-link-active">
+                            Contact
+                        </NavLink>
+                    </div>
                 </div>
-
-                {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/account", "Account") : null}
-                {props.signedInStatus === "SIGNED_IN" ? dynamicLink("/order-history", "Order") : null}
             </div>
 
             <div className="right-side">
@@ -71,15 +48,6 @@ const NavigationContainer = (props) => {
                         <FontAwesomeIcon icon="shopping-cart" />
                     </NavLink>
                 </div>
-
-               
-                <div className="right-nav-wrapper">
-                    <NavLink to="/auth" activeClassName="nav-link-active">
-                        <FontAwesomeIcon icon="sign-in-alt" />
-                    </NavLink>
-                </div>
-
-                {props.signedInStatus === "SIGNED_IN" ? <a onClick={handleSignOut}><FontAwesomeIcon icon="sign-out-alt" /></a> : null}   
             </div>
         </div>
     )

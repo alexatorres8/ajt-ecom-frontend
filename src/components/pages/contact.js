@@ -10,7 +10,7 @@ export default function() {
                 style={{
                     background: "url(" + contactPicture + ") no-repeat",
                     backgroundSize: "cover",
-                    backgroundPosition: "center"
+                    backgroundPosition: "right"
                 }}
             />
 

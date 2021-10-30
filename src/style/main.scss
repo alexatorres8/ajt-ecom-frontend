@@ -1,8 +1,10 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 @import "./base.scss";
 @import "./navigation.scss";
-@import "./page-layout.scss";
 @import "./shop.scss";
-@import "/shop-product.scss";
-@import "/user-page-layout.scss";
-@import "/cart-product.scss"
+@import "./shop-product.scss";
+@import "./page-layout.scss";
+@import "./user-page-layout.scss";
+@import "./cart-product.scss";
+@import "/media-queries.scss";

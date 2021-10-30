@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class Signin extends Component {
+export default class SignIn extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: "",
-      password: "",
+      password : "",
       errorText: ""
     };
 
@@ -24,15 +24,15 @@ export default class Signin extends Component {
 
   handleSubmit(event) {
     axios.post("https://api-ecom-ajt.herokuapp.com/user",
-    {
-      user: {
+      {
         email: this.state.email,
         password: this.state.password
-      }
-    },
-    // { withCredentials: false } 
+      },
+      { withCredentials: false }
     ).then(response => {
-        if (response.data.status === "created") {
+      console.log("response", response);
+        if (response.data.email === "abcd@email.com" &&
+            response.data.password === "123password") {
           this.props.handleSuccessfulAuth();
         } else {
           this.setState({

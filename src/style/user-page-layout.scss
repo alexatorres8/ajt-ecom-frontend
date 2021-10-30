@@ -1,34 +1,20 @@
 .user-layout-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0px 350px;
-  background-color: $white;
-  height: calc(100vh - 50px);
-  color: $slate-gray;
+  @include layout();
 
   .left-column {
-    display: flex;
-    flex-direction: column;
-    padding: 100px;
+    @include column-layout();
 
     .title-header {
-      align-items: left;
-      font-size: 30px;
-      text-transform: uppercase;
-      font-weight: bold;
+      @include title-header-style();
       margin-bottom: 50px;
     }
 
     .page-text {
       font-size: 20px;
-      width: 300px;
     }
 
     .form-wrapper {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-row-gap: 10px;
-      width: 300px;
+      @include form-wrapper-layout();
 
       .form-group {
         font-weight: bold;
@@ -41,19 +27,13 @@
       }
 
       .button {
+        @include button-style();
         display: grid;
         justify-content: center;
         align-items: center;
         margin-top: 10px;
-        background-color: $slate-gray;
-        color: $lite-green;
-        border: 0px;
-        border-radius: 20px;
-        font-size: 15px;
-        font-weight: bold;
         height: 40px;
         letter-spacing: 0.9px;
-        text-transform: uppercase;
         width: 300px;
       }
     }

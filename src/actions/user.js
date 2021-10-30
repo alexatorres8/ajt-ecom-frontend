@@ -1,4 +1,3 @@
-import { $CombinedState } from 'redux';
 import {
     SET_CART_PRODUCTS
 } from './types';

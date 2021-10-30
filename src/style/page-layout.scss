@@ -1,26 +1,17 @@
 .page-layout-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0px 350px;
-  background-color: $white;
-  height: calc(100vh - 50px);
-  color: $slate-gray;
+  @include layout();
 
   .left-column {
     opacity: 75%;
   }
 
   .right-column {
-    display: flex;
-    flex-direction: column;
-    padding: 100px;
+    @include column-layout();
     align-items: center;
     justify-content: center;
 
     .title-header {
-      font-size: 30px;
-      text-transform: uppercase;
-      font-weight: bold;
+      @include title-header-style();
     }
 
     .page-text {
@@ -28,25 +19,15 @@
     }
 
     .form-wrapper {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-row-gap: 10px;
+      @include form-wrapper-layout();
       justify-content: center;
-      width: 300px;
 
-      .form-group {
-        input {
+      .form-group  > input {
           width: 292px;
-        }
       }
 
       button {
-        background-color: $slate-gray;
-        color: $lite-green;
-        border: 0px;
-        border-radius: 20px;
-        font-size: 15px;
-        font-weight: bold;
+        @include button-style();
         height: 30px;
         letter-spacing: 1px;
         text-transform: uppercase;

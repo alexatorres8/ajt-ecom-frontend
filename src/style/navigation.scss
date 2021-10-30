@@ -9,22 +9,27 @@
         display: flex;
         padding: 10px;
 
-        .title-wrapper {
-            margin: 0 20px 5px 0;
-            color: $lite-green;
-            letter-spacing: 2px;
-            font-size: 25px;
-            text-transform: uppercase;
-            font-weight: bold;
+        .title-wrapper  >  .title-text {
+                margin: 0 20px 5px 0;
+                color: $lite-green;
+                letter-spacing: 2px;
+                font-size: 25px;
+                text-transform: uppercase;
+                font-weight: bold;
         }
 
         .left-nav-wrapper {
-            padding: 10px;
-            font-size: 13px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            color: $lite-green;
+            display: flex;
+            justify-content: space-evenly;
+
+            .left-nav-link {
+                padding: 10px;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                color: $lite-green;
+            }
 
             a {
                 color: $olive-green;
@@ -47,8 +52,9 @@
         display: flex;
 
         .right-nav-wrapper {
+            margin-right: 10px;
             padding: 10px;
-            font-size: 18px;
+            font-size: 20px;
 
             a {
                 color: $olive-green;

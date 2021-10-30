@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import image2 from "../../../static/assets/images/image2.jpg";
 
-export default class Order extends Component {
+export default class OrderHistory extends Component {
 
     render() {
         return (

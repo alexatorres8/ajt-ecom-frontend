@@ -69,5 +69,4 @@ function mapStateToProps(state) {
 }
 
 Cart = connect(mapStateToProps, actions)(Cart);
-
 export default Cart;
