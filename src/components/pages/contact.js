@@ -18,7 +18,8 @@ export default function() {
                 <div className="title-header">Contact Me</div>
 
                 <div className="page-text">
-                <p><b>Email</b>: email@email.com</p>
+                    <p><b>Email:</b> jazctor(a)gmail.com</p>
+                    <p><b>Instagram:</b> @foundpeace</p>
                 </div>
             </div>
         </div>

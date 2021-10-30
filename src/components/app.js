@@ -14,7 +14,6 @@ import Checkout from "./pages/checkout";
 import OrderComplete from "./pages/order-complete";
 import NotFound from "./pages/not-found";
 
-
 library.add(faShoppingCart, faSignInAlt, faSignOutAlt, faLeaf, faAngleDoubleLeft);
 
 class App extends Component {
