@@ -1,4 +1,5 @@
 # Alexandra Torres' Ecommerce Capstone Project
+Frontend for Ecommerce Capstone Project
 
 > JASMINE'S GRAPHIC SHOP is an online shop to purchase graphics that have been created by a current Commerical Graphics student.
 
