@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import SocialMediaButtons from 'react-social-media-buttons';
+import { SocialMediaButtons } from "react-social-media-buttons";
 import contactPicture from "../../../static/assets/images/jasmine02.jpg";
 
 class Contact extends Component {
